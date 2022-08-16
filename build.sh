@@ -229,7 +229,7 @@ if completeBuild || hasArg libcuml || hasArg prims || hasArg bench || hasArg pri
     fi
     
     # Overriding the ALL for CUDA architectures and only building for Jetson
-    CUML_CMAKE_CUDA_ARCHITECTURES="-DCMAKE_CUDA_ARCHITECTURES=72-real;87-real"
+    CUML_CMAKE_CUDA_ARCHITECTURES="72;87"
 
     mkdir -p ${LIBCUML_BUILD_DIR}
     cd ${LIBCUML_BUILD_DIR}
