@@ -8,7 +8,7 @@
 {% set py_version=environ.get('CONDA_PY', 36) %}
 
 package:
-  name: cuml
+  name: cuml-l4t
   version: {{ version }}
 
 source:
@@ -29,27 +29,23 @@ requirements:
     - cython>=0.29,<0.30
     - cmake>=3.20.1
     - treelite=2.0.0
-    - cudf {{ minor_version }}
-    - libcuml={{ version }}
-    - libcumlprims {{ minor_version }}
-    - cudatoolkit {{ cuda_version }}.*
-    - ucx-py 0.21
-    - ucx-proc=*=gpu
+    - cudf-l4t {{ minor_version }}
+    - libcuml-l4t={{ version }}
+    - ucx-py-l4t
+    - ucx-proc-l4t=*=gpu
   run:
     - python x.x
-    - cudf {{ minor_version }}
-    - dask-cudf {{ minor_version }}
-    - libcuml={{ version }}
-    - libcumlprims {{ minor_version }}
-    - cupy>=7.8.0,<10.0.0a0
+    - cudf-l4t {{ minor_version }}
+    - dask-cudf-l4t {{ minor_version }}
+    - libcuml-l4t={{ version }}
+    - cupy-l4t>=7.8.0
     - treelite=2.0.0
-    - nccl>=2.9.9
-    - ucx-py 0.21
-    - ucx-proc=*=gpu
+    - nccl-l4t>=2.9.9
+    - ucx-py-l4t
+    - ucx-proc-l4t=*=gpu
     - dask>=2021.6.0
     - distributed>=2021.6.0
     - joblib >=0.11
-    - {{ pin_compatible('cudatoolkit', max_pin='x.x') }}
 
 about:
   home: http://rapids.ai/
